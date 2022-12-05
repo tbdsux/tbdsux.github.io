@@ -10,5 +10,4 @@ import image from "@astrojs/image";
 export default defineConfig({
   integrations: [tailwind(), image()],
   site: "https://theboringdude.github.io",
-  base: "/website",
 });
