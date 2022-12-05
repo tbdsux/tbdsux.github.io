@@ -2,5 +2,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///home/theboringdude/Desktop/Projects/website/.github/workflows/deploy.yml"
   }
 }
