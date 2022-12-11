@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+
+const works: {
+  name: string;
+  description: string;
+  website: string;
+  logo: string | null;
+}[] = [
+  {
+    name: "World of Cryptopups",
+    description:
+      "Website for the World of Cryptopups NFT Project in the Wax blockchain.",
+    website: "https://www.worldofcryptopups.com",
+    logo: "https://www.worldofcryptopups.com/apple-icon.png",
+  },
+  {
+    name: "kuryana",
+    description: "A serverless web scraper api for MyDramaList.com",
+    website: "https://github.com/TheBoringDude/kuryana",
+    logo: null,
+  },
+  {
+    name: "minidis",
+    description: "Simple application commands handler for discordgo.",
+    website: "https://github.com/TheBoringDude/minidis",
+    logo: null,
+  },
+  {
+    name: "disinter.py",
+    description:
+      "A discord interactions library to receieve interactions via HTTP Posts with an API endpoint.",
+    website: "https://github.com/TheBoringDude/disinter.py",
+    logo: null,
+  },
+  {
+    name: "zeta-library",
+    description: "A personal collections library app for Deta Space.",
+    website: "https://github.com/TheBoringDude/zeta-library",
+    logo: "https://raw.githubusercontent.com/TheBoringDude/zeta-library/main/icon.png",
+  },
+];
+---
+
+<Layout title="My Works | Joshue Abance">
+  <main
+    class="min-h-screen py-24 w-5/6 xl:w-4/5 mx-auto flex items-center justify-center"
+  >
+    <div class="text-center text-white">
+      <div class="text-left">
+        <small>
+          <a href="/" class="hover:underline"> Return Home</a>
+        </small>
+      </div>
+
+      <h3 class="text-3xl font-black">My Works</h3>
+      <p>Discover some of the projects that I have made and created</p>
+
+      <ul
+        class="mt-12 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 xl:gap-8 items-stretch"
+      >
+        {
+          works.map((i) => (
+            <li>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                title="Visit project"
+                href={i.website}
+                class="flex items-center justify-between text-left border border-black/10 hover:bg-black/10 duration-300 py-2 px-4 rounded-xl"
+              >
+                {i.logo ? (
+                  <Image
+                    format="png"
+                    height={100}
+                    width={100}
+                    alt={i.name}
+                    class="rounded-xl"
+                    src={i.logo}
+                  />
+                ) : (
+                  <div class="flex items-center justify-center h-[100px] w-[100px]">
+                    <img
+                      height={40}
+                      width={40}
+                      alt={i.name}
+                      src="https://cdn.simpleicons.org/github/white"
+                    />
+                  </div>
+                )}
+
+                <div class="ml-6 w-full">
+                  <strong class="text-lg tracking-wide">{i.name}</strong>
+                  <p class="line-clamp-2">{i.description}</p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+</Layout>

@@ -16,5 +16,8 @@
     "@fontsource/work-sans": "^4.5.12",
     "astro": "^1.6.10",
     "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2"
   }
 }
