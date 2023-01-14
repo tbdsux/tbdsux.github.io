@@ -1,13 +1,9 @@
 ---
+import Works from "../components/Works.astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "@astrojs/image/components";
+import type { WorkProps } from "../types/works";
 
-const works: {
-  name: string;
-  description: string;
-  website: string;
-  logo: string | null;
-}[] = [
+const projects: WorkProps[] = [
   {
     name: "World of Cryptopups",
     description:
@@ -16,29 +12,44 @@ const works: {
     logo: "https://www.worldofcryptopups.com/apple-icon.png",
   },
   {
+    name: "koyo",
+    description: "Website screenshot service api on Deta Space.",
+    website: "https://github.com/tbdsux/koyo",
+    logo: "https://raw.githubusercontent.com/tbdsux/koyo/main/assets/icon.png",
+  },
+  {
+    name: "zeta-library",
+    description: "A personal collections library app for Deta Space.",
+    website: "https://github.com/tbdsux/zeta-library",
+    logo: "https://raw.githubusercontent.com/tbdsux/zeta-library/main/icon.png",
+  },
+  {
+    name: "phurma",
+    description: "Self-manage and integrate forms through an api",
+    website: "https://github.com/tbdsux/phurma",
+    logo: "https://raw.githubusercontent.com/tbdsux/phurma/main/assets/icon.png",
+  },
+];
+
+const others: WorkProps[] = [
+  {
     name: "kuryana",
     description: "A serverless web scraper api for MyDramaList.com",
-    website: "https://github.com/TheBoringDude/kuryana",
+    website: "https://github.com/tbdsux/kuryana",
     logo: null,
   },
   {
     name: "minidis",
     description: "Simple application commands handler for discordgo.",
-    website: "https://github.com/TheBoringDude/minidis",
+    website: "https://github.com/tbdsux/minidis",
     logo: null,
   },
   {
     name: "disinter.py",
     description:
       "A discord interactions library to receieve interactions via HTTP Posts with an API endpoint.",
-    website: "https://github.com/TheBoringDude/disinter.py",
+    website: "https://github.com/tbdsux/disinter.py",
     logo: null,
-  },
-  {
-    name: "zeta-library",
-    description: "A personal collections library app for Deta Space.",
-    website: "https://github.com/TheBoringDude/zeta-library",
-    logo: "https://raw.githubusercontent.com/TheBoringDude/zeta-library/main/icon.png",
   },
 ];
 ---
@@ -48,7 +59,7 @@ const works: {
     class="min-h-screen py-24 w-5/6 xl:w-4/5 mx-auto flex items-center justify-center"
   >
     <div class="text-center text-white">
-      <div class="text-left">
+      <div class="text-left mb-4">
         <small>
           <a href="/" class="hover:underline"> Return Home</a>
         </small>
@@ -56,49 +67,31 @@ const works: {
 
       <h3 class="text-3xl font-black">My Works</h3>
       <p>Discover some of the projects that I have made and created</p>
+      <p>
+        See more on my
+        <a
+          href="https://github.com/tbdsux?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold hover:underline"
+        >
+          Github
+        </a> page.
+      </p>
 
-      <ul
-        class="mt-12 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 xl:gap-8 items-stretch"
-      >
-        {
-          works.map((i) => (
-            <li>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                title="Visit project"
-                href={i.website}
-                class="flex items-center justify-between text-left border border-black/10 hover:bg-black/10 duration-300 py-2 px-4 rounded-xl"
-              >
-                {i.logo ? (
-                  <Image
-                    format="png"
-                    height={100}
-                    width={100}
-                    alt={i.name}
-                    class="rounded-xl"
-                    src={i.logo}
-                  />
-                ) : (
-                  <div class="flex items-center justify-center h-[100px] w-[100px]">
-                    <img
-                      height={40}
-                      width={40}
-                      alt={i.name}
-                      src="https://cdn.simpleicons.org/github/white"
-                    />
-                  </div>
-                )}
+      <div class="mt-12">
+        <h4 class="text-white text-left font-bold mb-4">Projects</h4>
 
-                <div class="ml-6 w-full">
-                  <strong class="text-lg tracking-wide">{i.name}</strong>
-                  <p class="line-clamp-2">{i.description}</p>
-                </div>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+        <Works works={projects} />
+      </div>
+
+      <hr class="my-10 border-black/10" />
+
+      <div class="">
+        <h4 class="text-white text-left font-bold mb-4">Others</h4>
+
+        <Works works={others} />
+      </div>
     </div>
   </main>
 </Layout>

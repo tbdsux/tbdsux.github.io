@@ -1,0 +1,53 @@
+---
+import { Image } from "@astrojs/image/components";
+import type { WorkProps } from "../types/works";
+
+interface Props {
+  works: WorkProps[];
+}
+
+const { works } = Astro.props;
+---
+
+<ul
+  class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 xl:gap-8 items-stretch"
+>
+  {
+    works.map((i) => (
+      <li>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          title="Visit project"
+          href={i.website}
+          class="flex items-center justify-between text-left border border-black/10 hover:bg-black/10 duration-300 py-2 px-4 rounded-xl"
+        >
+          {i.logo ? (
+            <Image
+              format="png"
+              height={100}
+              width={100}
+              alt={i.name}
+              class="rounded-xl"
+              src={i.logo}
+            />
+          ) : (
+            <div class="flex items-center justify-center  h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] ">
+              <img
+                height={40}
+                width={40}
+                alt={i.name}
+                src="https://cdn.simpleicons.org/github/white"
+              />
+            </div>
+          )}
+
+          <div class="ml-6 w-full">
+            <strong class="text-lg tracking-wide">{i.name}</strong>
+            <p class="line-clamp-3 lg:line-clamp-2">{i.description}</p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>
