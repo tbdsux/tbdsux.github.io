@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Work Sans"', ...fontFamily.sans],
+        sans: ['"Rubik"', ...fontFamily.sans],
       },
     },
   },
