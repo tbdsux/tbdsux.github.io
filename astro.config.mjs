@@ -9,5 +9,5 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), image()],
-  site: "https://tbdsux.github.io",
+  site: "https://tbdsux.dev",
 });
