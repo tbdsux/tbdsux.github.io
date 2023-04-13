@@ -23,16 +23,18 @@ const { works } = Astro.props;
           class="flex items-center justify-between text-left border border-black/10 hover:bg-black/10 duration-300 py-2 px-4 rounded-xl"
         >
           {i.logo ? (
-            <Image
-              format="png"
-              height={100}
-              width={100}
-              alt={i.name}
-              class="rounded-xl"
-              src={i.logo}
-            />
+            <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
+              <Image
+                format="png"
+                height={100}
+                width={100}
+                alt={i.name}
+                class="rounded-xl"
+                src={i.logo}
+              />
+            </div>
           ) : (
-            <div class="flex items-center justify-center  h-[80px] lg:h-[100px] w-[80px] lg:w-[100px] ">
+            <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
               <img
                 height={40}
                 width={40}
