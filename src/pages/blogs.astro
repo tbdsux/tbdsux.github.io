@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const allBlogs = await Astro.glob("./blogs/*.md");
+---
+
+<Layout title="Blogs | Joshue Abance">
+  <div class="text-center text-white">
+    <div class="text-left mb-4">
+      <small>
+        <a href="/" class="hover:underline"> Return Home</a>
+      </small>
+    </div>
+
+    <h3 class="text-3xl font-black">My Blogs</h3>
+    <p>
+      I want to try writing blogs, usually dev tutorials and such stuff, hope it
+      picks your interest...
+    </p>
+
+    <div class="mt-12">
+      <ul class="w-full text-left">
+        {
+          allBlogs.map((post) => (
+            <>
+              <li>
+                <a
+                  href={post.url}
+                  class="px-4 py-2 flex flex-col hover:bg-black/20 duration-300 rounded-lg"
+                >
+                  <h4 class="text-xl font-extrabold tracking-wide leading-loose">
+                    {post.frontmatter.title}
+                  </h4>
+                  <p class="line-clamp-1">{post.frontmatter.description}</p>
+                  <small class="text-gray-300">
+                    {new Date(post.frontmatter.pubDate).toDateString()}
+                  </small>
+                </a>
+              </li>
+              <hr class="my-6 border-black/20" />
+            </>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</Layout>
