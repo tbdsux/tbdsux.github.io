@@ -95,49 +95,45 @@ const others: WorkProps[] = [
 ---
 
 <Layout title="My Works | Joshue Abance">
-  <main
-    class="min-h-screen py-24 w-5/6 xl:w-4/5 mx-auto flex items-center justify-center"
-  >
-    <div class="text-center text-white">
-      <div class="text-left mb-4">
-        <small>
-          <a href="/" class="hover:underline"> Return Home</a>
-        </small>
-      </div>
-
-      <h3 class="text-3xl font-black">My Works</h3>
-      <p>Discover some of the projects that I have made and created</p>
-      <p>
-        See more on my
-        <a
-          href="https://github.com/tbdsux?tab=repositories"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-semibold hover:underline"
-        >
-          Github
-        </a> page.
-      </p>
-
-      <div class="mt-12">
-        <h4 class="text-white text-left font-bold mb-4">Works</h4>
-
-        <Works works={works} />
-      </div>
-
-      <div class="mt-12">
-        <h4 class="text-white text-left font-bold mb-4">Projects</h4>
-
-        <Works works={projects} />
-      </div>
-
-      <hr class="my-10 border-black/10" />
-
-      <div class="">
-        <h4 class="text-white text-left font-bold mb-4">Others</h4>
-
-        <Works works={others} />
-      </div>
+  <div class="text-center text-white">
+    <div class="text-left mb-4">
+      <small>
+        <a href="/" class="hover:underline"> Return Home</a>
+      </small>
     </div>
-  </main>
+
+    <h3 class="text-3xl font-black">My Works</h3>
+    <p>Discover some of the projects that I have made and created</p>
+    <p>
+      See more on my
+      <a
+        href="https://github.com/tbdsux?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold hover:underline"
+      >
+        Github
+      </a> page.
+    </p>
+
+    <div class="mt-12">
+      <h4 class="text-white text-left font-bold mb-4">Works</h4>
+
+      <Works works={works} />
+    </div>
+
+    <div class="mt-12">
+      <h4 class="text-white text-left font-bold mb-4">Projects</h4>
+
+      <Works works={projects} />
+    </div>
+
+    <hr class="my-10 border-black/10" />
+
+    <div class="">
+      <h4 class="text-white text-left font-bold mb-4">Others</h4>
+
+      <Works works={others} />
+    </div>
+  </div>
 </Layout>
