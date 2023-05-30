@@ -27,3 +27,40 @@ const { frontmatter } = Astro.props;
     </div>
   </div>
 </Layout>
+
+<script>
+  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+  for (const cb of codeBlocks) {
+    let copyButton = document.createElement("button");
+    copyButton.className =
+      "text-xs hidden group-hover:block absolute top-0 right-0 py-0.5 px-4 rounded bg-gray-600 hover:bg-gray-700 text-white duration-300";
+    copyButton.innerHTML = "Copy";
+
+    let wrapper = document.createElement("div");
+    wrapper.className = "relative group";
+
+    cb.setAttribute("tabindex", "0");
+    cb.appendChild(copyButton);
+
+    cb.parentNode?.insertBefore(wrapper, cb);
+    wrapper.appendChild(cb);
+
+    copyButton.addEventListener("click", async () => {
+      await copyCode(cb, copyButton);
+    });
+  }
+
+  async function copyCode(block: HTMLPreElement, button: HTMLButtonElement) {
+    const code = block.querySelector("code");
+    const textCode = code?.innerText ?? "";
+
+    await navigator.clipboard.writeText(textCode);
+
+    button.innerText = "Copied";
+
+    setTimeout(() => {
+      button.innerText = "Copy";
+    }, 2000);
+  }
+</script>
