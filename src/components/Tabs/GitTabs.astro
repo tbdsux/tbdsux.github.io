@@ -1,0 +1,16 @@
+---
+import Tabs from "./Tabs";
+---
+
+<Tabs
+  client:visible
+  sharedStore="tabLang"
+  defaultPanel="github"
+  tabs={[
+    { label: "GitHub", value: "github" },
+    { label: "GitLab", value: "gitlab" },
+  ]}
+>
+  <Fragment slot="panel.github"><slot name="github" /></Fragment>
+  <Fragment slot="panel.gitlab"><slot name="gitlab" /></Fragment>
+</Tabs>

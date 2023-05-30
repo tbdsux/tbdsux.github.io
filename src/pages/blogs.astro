@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const allBlogs = await Astro.glob("./blogs/*.md");
+const allBlogs = await Astro.glob("./blogs/*.{md,mdx}");
 ---
 
 <Layout title="Blogs | Joshue Abance">
@@ -21,25 +21,31 @@ const allBlogs = await Astro.glob("./blogs/*.md");
     <div class="mt-12">
       <ul class="w-full text-left">
         {
-          allBlogs.map((post) => (
-            <>
-              <li>
-                <a
-                  href={post.url}
-                  class="px-4 py-2 flex flex-col hover:bg-black/20 duration-300 rounded-lg"
-                >
-                  <h4 class="text-xl font-extrabold tracking-wide leading-loose">
-                    {post.frontmatter.title}
-                  </h4>
-                  <p class="line-clamp-1">{post.frontmatter.description}</p>
-                  <small class="text-gray-300">
-                    {new Date(post.frontmatter.pubDate).toDateString()}
-                  </small>
-                </a>
-              </li>
-              <hr class="my-6 border-black/20" />
-            </>
-          ))
+          allBlogs
+            .sort(
+              (a, b) =>
+                new Date(b.frontmatter.pubDate).getTime() -
+                new Date(a.frontmatter.pubDate).getTime()
+            )
+            .map((post) => (
+              <>
+                <li>
+                  <a
+                    href={post.url}
+                    class="px-4 py-2 flex flex-col hover:bg-black/20 duration-300 rounded-lg"
+                  >
+                    <h4 class="text-xl font-extrabold tracking-wide leading-loose">
+                      {post.frontmatter.title}
+                    </h4>
+                    <p class="line-clamp-1">{post.frontmatter.description}</p>
+                    <small class="text-gray-300">
+                      {new Date(post.frontmatter.pubDate).toDateString()}
+                    </small>
+                  </a>
+                </li>
+                <hr class="my-6 border-black/20" />
+              </>
+            ))
         }
       </ul>
     </div>

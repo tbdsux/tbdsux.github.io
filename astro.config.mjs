@@ -1,13 +1,12 @@
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
+import image from "@astrojs/image";
+import mdx from "@astrojs/mdx";
+import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
-import image from "@astrojs/image";
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), image()],
+  integrations: [tailwind(), image(), preact(), mdx()],
   site: "https://tbdsux.dev",
 });
