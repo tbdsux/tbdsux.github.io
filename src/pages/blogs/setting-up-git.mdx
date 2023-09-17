@@ -66,7 +66,7 @@ It was created by Linus Torvalds in 2005 and has since become one of the most wi
 - Copy the contents of your pub key
 
   ```sh
-  cat ~/.ssh/id_ed25519 # replace id_ed25519 with the name you set
+  cat ~/.ssh/id_ed25519.pub # replace id_ed25519 with the name you set
 
   # Output:
   # ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAC0gTjpr1XOA4OB1iK7rCL/3p1gDQu47bDEXRY8ysng your-email@gmail.com
@@ -271,3 +271,17 @@ You can sign commits and tags you make for your repository. When you add a crypt
 - Once done, our commits are now verified
 
   ![verified commit](/assets/blogs/setting-up-git/verified-commit.png)
+
+# Other Useful Pre-Setup Commands
+
+- Change default editor for editing commit messages.
+
+  ```sh
+  git config --global core.editor nano # replace `nano` with your preferred editor
+  ```
+
+- Set default branch name
+
+  ```sh
+  git config --global init.defaultBranch
+  ```
