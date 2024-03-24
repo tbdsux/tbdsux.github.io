@@ -7,6 +7,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), preact(), mdx()],
-  site: "https://tbdsux.dev",
-  compressHTML: true,
+  site: "https://tbdsux.github.io",
+  compressHTML: "true",
 });
