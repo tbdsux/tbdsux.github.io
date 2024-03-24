@@ -8,5 +8,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind(), preact(), mdx()],
   site: "https://tbdsux.github.io",
-  compressHTML: "true",
+  compressHTML: true,
 });
