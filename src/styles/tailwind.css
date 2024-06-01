@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 body {
-  background: hsla(10, 82%, 65%, 1);
+  background: hsla(213, 77%, 14%, 1);
 
   background: linear-gradient(
-    225deg,
-    hsla(10, 82%, 65%, 1) 0%,
-    hsla(290, 79%, 13%, 1) 100%
+    315deg,
+    hsla(213, 77%, 14%, 1) 0%,
+    hsla(202, 27%, 45%, 1) 100%
   );
 
   background: -moz-linear-gradient(
-    225deg,
-    hsla(10, 82%, 65%, 1) 0%,
-    hsla(290, 79%, 13%, 1) 100%
+    315deg,
+    hsla(213, 77%, 14%, 1) 0%,
+    hsla(202, 27%, 45%, 1) 100%
   );
 
   background: -webkit-linear-gradient(
-    225deg,
-    hsla(10, 82%, 65%, 1) 0%,
-    hsla(290, 79%, 13%, 1) 100%
+    315deg,
+    hsla(213, 77%, 14%, 1) 0%,
+    hsla(202, 27%, 45%, 1) 100%
   );
 
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EF745C", endColorstr="#34073D", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#08203e", endColorstr="#557c93", GradientType=1 );
 }
