@@ -3,25 +3,11 @@
 @tailwind utilities;
 
 body {
-  background: hsla(213, 77%, 14%, 1);
-
-  background: linear-gradient(
-    315deg,
-    hsla(213, 77%, 14%, 1) 0%,
-    hsla(202, 27%, 45%, 1) 100%
-  );
-
-  background: -moz-linear-gradient(
-    315deg,
-    hsla(213, 77%, 14%, 1) 0%,
-    hsla(202, 27%, 45%, 1) 100%
-  );
-
-  background: -webkit-linear-gradient(
-    315deg,
-    hsla(213, 77%, 14%, 1) 0%,
-    hsla(202, 27%, 45%, 1) 100%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#08203e", endColorstr="#557c93", GradientType=1 );
+  background: #1a1a1a;
+  background: linear-gradient(135deg, #000000, #1a1a1a, #2d2d2d);
+  background: -moz-linear-gradient(135deg, #000000, #1a1a1a, #2d2d2d);
+  background: -webkit-linear-gradient(135deg, #000000, #1a1a1a, #2d2d2d);
+  background-image: radial-gradient(#2d2d2d 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: #1a1a1a;
 }

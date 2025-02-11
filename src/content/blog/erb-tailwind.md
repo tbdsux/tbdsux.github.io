@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/BlogLayout.astro
-title: "Electron React Boilerplate with Tailwind"
+title: Electron React Boilerplate with Tailwind
 pubDate: 2023-06-01
-description: "Let's add Tailwind with Electron React Boilerplate to use for our main styling..."
-author: "Joshue Abance"
-tags: ["tutorial"]
+description: Let's add Tailwind with Electron React Boilerplate to use for our main styling...
+author: Joshue Abance
+tags:
+  - tutorial
 ---
 
 ## About

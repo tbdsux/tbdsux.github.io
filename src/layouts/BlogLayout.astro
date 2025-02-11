@@ -1,7 +1,10 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import Layout from "./Layout.astro";
 
-const { frontmatter } = Astro.props;
+type Props = CollectionEntry<"blog">["data"];
+
+const frontmatter = Astro.props;
 ---
 
 <Layout title={`${frontmatter.title} - Blog | Joshue Abance`}>

@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/BlogLayout.astro
-title: "Welcome To My Blog!"
+title: Welcome To My Blog!
 pubDate: 2023-05-26
-description: "This is the first post for my new and `serious` blog"
-author: "Joshue Abance"
-tags: ["blogging"]
+description: This is the first post for my new and `serious` blog
+author: Joshue Abance
+tags:
+  - blogging
 ---
 
 # Welcome~
