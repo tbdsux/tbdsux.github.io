@@ -1,97 +1,21 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
 import Works from "../components/Works.astro";
 import Layout from "../layouts/Layout.astro";
-import type { WorkProps } from "../types/works";
 
-const works: WorkProps[] = [
-  {
-    name: "World of Cryptopups",
-    description:
-      "Website for the World of Cryptopups NFT Project in the Wax blockchain.",
-    website: "https://www.worldofcryptopups.com",
-    logo: "https://www.worldofcryptopups.com/apple-icon.png",
-  },
-  {
-    name: "Red Panda Adventures",
-    description: "Rusty is the cutest red panda nft collection in wax.",
-    website: "https://www.r-panda.io/",
-    logo: "https://www.r-panda.io/icon/apple-icon.png",
-  },
-];
+const works = await getCollection("works");
 
-const projects: WorkProps[] = [
-  {
-    name: "magna.lit",
-    description:
-      "A manga, manhwa, manhua reader / scraper / aggregator in Deta Space.",
-    website: "https://github.com/tbdsux/magna.lit",
-    logo: "https://raw.githubusercontent.com/tbdsux/magna.lit/main/logo.png",
-  },
-  {
-    name: "Gin Web",
-    description: "Manage project tasks, todos and other stuff",
-    website: "https://github.com/tbdsux/ginny",
-    logo: "https://raw.githubusercontent.com/tbdsux/ginny/main/assets/logo.png",
-  },
-  {
-    name: "koyo",
-    description: "Website screenshot service api on Deta Space.",
-    website: "https://github.com/tbdsux/koyo",
-    logo: "https://raw.githubusercontent.com/tbdsux/koyo/main/assets/icon.png",
-  },
-  {
-    name: "zeta-library",
-    description: "A personal collections library app for Deta Space.",
-    website: "https://github.com/tbdsux/zeta-library",
-    logo: "https://raw.githubusercontent.com/tbdsux/zeta-library/main/icon.png",
-  },
-  {
-    name: "phurma",
-    description: "Self-manage and integrate forms through an api",
-    website: "https://github.com/tbdsux/phurma",
-    logo: "https://raw.githubusercontent.com/tbdsux/phurma/main/assets/icon.png",
-  },
-  {
-    name: "LCL Paste",
-    description: "Simple Paste [Bin] Manager App",
-    website: "https://lcl-paste.vercel.app/",
-    logo: null,
-  },
-];
-
-const others: WorkProps[] = [
-  {
-    name: "kuryana",
-    description: "A serverless web scraper api for MyDramaList.com",
-    website: "https://github.com/tbdsux/kuryana",
-    logo: null,
-  },
-  {
-    name: "space-custom-apps",
-    description: "Custom Spacefile templates for Deta Space",
-    website: "https://github.com/tbdsux/space-custom-apps",
-    logo: null,
-  },
-  {
-    name: "erb-tailwind",
-    description: "electron-react-boilerplate with tailwind",
-    website: "https://github.com/tbdsux/erb-tailwind",
-    logo: null,
-  },
-  {
-    name: "minidis",
-    description: "Simple application commands handler for discordgo.",
-    website: "https://github.com/tbdsux/minidis",
-    logo: null,
-  },
-  {
-    name: "disinter.py",
-    description:
-      "A discord interactions library to receieve interactions via HTTP Posts with an API endpoint.",
-    website: "https://github.com/tbdsux/disinter.py",
-    logo: null,
-  },
-];
+const webProjects = works
+  .filter((item) => item.data.category === "websites")
+  .map((item) => item.data);
+const gitProjects = works
+  .filter((item) => item.data.category === "api")
+  .map((item) => item.data);
+const otherProjects = works
+  .filter((item) => item.data.category === "others")
+  .map((item) => item.data);
 ---
 
 <Layout title="My Works | Joshue Abance">
@@ -102,38 +26,65 @@ const others: WorkProps[] = [
       </small>
     </div>
 
-    <h3 class="text-3xl font-black">My Works</h3>
-    <p>Discover some of the projects that I have made and created</p>
-    <p>
-      See more on my
-      <a
-        href="https://github.com/tbdsux?tab=repositories"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="font-semibold hover:underline"
-      >
-        Github
-      </a> page.
-    </p>
-
-    <div class="mt-12">
-      <h4 class="text-white text-left font-bold mb-4">Works</h4>
-
-      <Works works={works} />
+    <div>
+      <h3 class="text-3xl font-black">My Works</h3>
+      <p>Discover some of the projects that I have made and created</p>
+      <p>
+        See more on my
+        <a
+          href="https://github.com/tbdsux?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold hover:underline"
+        >
+          Github
+        </a> page.
+      </p>
     </div>
 
-    <div class="mt-12">
-      <h4 class="text-white text-left font-bold mb-4">Projects</h4>
+    <div class="space-y-20 mt-12">
+      <div class="space-y-12">
+        <div class="">
+          <h4 class="text-white text-left font-bold mb-4">Works</h4>
 
-      <Works works={projects} />
-    </div>
+          <Works works={webProjects} />
+        </div>
 
-    <hr class="my-10 border-black/10" />
+        <div class="">
+          <h4 class="text-white text-left font-bold mb-4">Projects</h4>
 
-    <div class="">
-      <h4 class="text-white text-left font-bold mb-4">Others</h4>
+          <Works works={gitProjects} />
+        </div>
 
-      <Works works={others} />
+        <div class="">
+          <h4 class="text-white text-left font-bold mb-4">Others</h4>
+
+          <Works works={otherProjects} />
+        </div>
+      </div>
+
+      <div class="text-center space-y-4">
+        <p>
+          Checkout my <strong><code>Github</code></strong> profile for more of my
+          projects and works
+        </p>
+        <a
+          title="Github"
+          href="https://github.com/tbdsux?tab=repositories"
+          target="_blank"
+          rel="noreferrer"
+          class="text-sm bg-black/20 hover:bg-black/40 duration-300 inline-flex items-center py-2 px-6 border border-white/10 rounded-xl"
+        >
+          <Image
+            alt="Github"
+            width={28}
+            height={28}
+            src="https://cdn.simpleicons.org/github/white"
+          />
+
+          <span class="ml-2">@tbdsux</span>
+        </a>
+      </div>
     </div>
   </div>
 </Layout>

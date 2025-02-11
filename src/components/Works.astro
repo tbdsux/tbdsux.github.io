@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import type { WorkProps } from "../types/works";
+import type { InferEntrySchema } from "astro:content";
 
 interface Props {
-  works: WorkProps[];
+  works: InferEntrySchema<"works">[];
 }
 
 const { works } = Astro.props;
@@ -20,7 +20,7 @@ const { works } = Astro.props;
           rel="noreferrer"
           title="Visit project"
           href={i.website}
-          class="flex items-center justify-between text-left border border-black/10 hover:bg-black/10 duration-300 py-2 px-4 rounded-xl"
+          class="flex items-center justify-between text-left bg-black/20 border border-black/10 hover:bg-black/40 duration-300 py-2 px-4 rounded-xl"
         >
           {i.logo ? (
             <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
