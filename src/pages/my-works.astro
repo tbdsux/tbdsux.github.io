@@ -7,15 +7,16 @@ import Layout from "../layouts/Layout.astro";
 
 const works = await getCollection("works");
 
-const webProjects = works
-  .filter((item) => item.data.category === "websites")
-  .map((item) => item.data);
-const gitProjects = works
-  .filter((item) => item.data.category === "api")
-  .map((item) => item.data);
-const otherProjects = works
-  .filter((item) => item.data.category === "others")
-  .map((item) => item.data);
+const filterByCategory = (category: string) =>
+  works
+    .filter((item) => item.data.category === category)
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .map((item) => item.data);
+
+const webProjects = filterByCategory("web-projects");
+const websites = filterByCategory("websites");
+const gitProjects = filterByCategory("api");
+const otherProjects = filterByCategory("others");
 ---
 
 <Layout title="My Works | Joshue Abance">
@@ -45,7 +46,7 @@ const otherProjects = works
     <div class="space-y-20 mt-12">
       <div class="space-y-12">
         <div class="">
-          <h4 class="text-white text-left font-bold mb-4">Works</h4>
+          <h4 class="text-white text-left font-bold mb-4">Web Projects</h4>
 
           <Works works={webProjects} />
         </div>
@@ -60,6 +61,12 @@ const otherProjects = works
           <h4 class="text-white text-left font-bold mb-4">Others</h4>
 
           <Works works={otherProjects} />
+        </div>
+
+        <div class="">
+          <h4 class="text-white text-left font-bold mb-4">Works</h4>
+
+          <Works works={websites} />
         </div>
       </div>
 
