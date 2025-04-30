@@ -15,6 +15,7 @@ const filterByCategory = (category: string) =>
 
 const webProjects = filterByCategory("web-projects");
 const websites = filterByCategory("websites");
+const miniProjects = filterByCategory("mini-projects");
 const gitProjects = filterByCategory("api");
 const otherProjects = filterByCategory("others");
 ---
@@ -55,6 +56,12 @@ const otherProjects = filterByCategory("others");
           <h4 class="text-white text-left font-bold mb-4">Projects</h4>
 
           <Works works={gitProjects} />
+        </div>
+
+        <div class="">
+          <h4 class="text-white text-left font-bold mb-4">Mini Web Projects</h4>
+
+          <Works works={miniProjects} />
         </div>
 
         <div class="">
