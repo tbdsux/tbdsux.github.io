@@ -33,6 +33,16 @@ const { works } = Astro.props;
                 src={i.logo}
               />
             </div>
+          ) : i.category === "api" ? (
+            <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
+              <img
+                height={60}
+                width={60}
+                alt={i.name}
+                class="rounded-xl"
+                src="/assets/api.png"
+              />
+            </div>
           ) : (
             <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
               <img
