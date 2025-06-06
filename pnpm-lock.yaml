@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@astrojs/mdx':
-        specifier: ^4.2.6
-        version: 4.2.6(astro@5.7.13(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0))
+        specifier: ^4.3.0
+        version: 4.3.0(astro@5.9.0(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0))
       '@astrojs/preact':
-        specifier: ^4.0.11
-        version: 4.0.11(@babel/core@7.26.8)(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(preact@10.25.4)(yaml@2.7.0)
+        specifier: ^4.1.0
+        version: 4.1.0(@babel/core@7.26.8)(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(preact@10.25.4)(yaml@2.7.0)
       '@fontsource/rubik':
         specifier: ^4.5.14
         version: 4.5.14
@@ -27,8 +27,8 @@ importers:
         specifier: ^4.0.6
         version: 4.0.6(vite@6.3.5(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
       astro:
-        specifier: ^5.7.13
-        version: 5.7.13(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0)
+        specifier: ^5.9.0
+        version: 5.9.0(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0)
       nanostores:
         specifier: ^0.9.3
         version: 0.9.5
@@ -62,28 +62,28 @@ packages:
   '@astrojs/internal-helpers@0.6.1':
     resolution: {integrity: sha512-l5Pqf6uZu31aG+3Lv8nl/3s4DbUzdlxTWDof4pEpto6GUJNhhCbelVi9dEyurOVyqaelwmS9oSyOWOENSfgo9A==}
 
-  '@astrojs/markdown-remark@6.3.1':
-    resolution: {integrity: sha512-c5F5gGrkczUaTVgmMW9g1YMJGzOtRvjjhw6IfGuxarM6ct09MpwysP10US729dy07gg8y+ofVifezvP3BNsWZg==}
+  '@astrojs/markdown-remark@6.3.2':
+    resolution: {integrity: sha512-bO35JbWpVvyKRl7cmSJD822e8YA8ThR/YbUsciWNA7yTcqpIAL2hJDToWP5KcZBWxGT6IOdOkHSXARSNZc4l/Q==}
 
-  '@astrojs/mdx@4.2.6':
-    resolution: {integrity: sha512-0i/GmOm6d0qq1/SCfcUgY/IjDc/bS0i42u7h85TkPFBmlFOcBZfkYhR5iyz6hZLwidvJOEq5yGfzt9B1Azku4w==}
-    engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
+  '@astrojs/mdx@4.3.0':
+    resolution: {integrity: sha512-OGX2KvPeBzjSSKhkCqrUoDMyzFcjKt5nTE5SFw3RdoLf0nrhyCXBQcCyclzWy1+P+XpOamn+p+hm1EhpCRyPxw==}
+    engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
     peerDependencies:
       astro: ^5.0.0
 
-  '@astrojs/preact@4.0.11':
-    resolution: {integrity: sha512-BEx4sIWCojMJM3RC6wXzPvS5URNKMeQitoW+Uy8uqZ6nM5Me3WE984yntMZTlq8hn3AE278TfUJn2dZhGtSuYA==}
-    engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
+  '@astrojs/preact@4.1.0':
+    resolution: {integrity: sha512-yXs63ndFHhoKHEZsvYbfsmmZt15QPEziW/twF4uBLAPWjSlZ1Fx/lG+NFMQpGy/CmvI0WkrhyPa9pkJp5ZaVmQ==}
+    engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
     peerDependencies:
       preact: ^10.6.5
 
-  '@astrojs/prism@3.2.0':
-    resolution: {integrity: sha512-GilTHKGCW6HMq7y3BUv9Ac7GMe/MO9gi9GW62GzKtth0SwukCu/qp2wLiGpEujhY+VVhaG9v7kv/5vFzvf4NYw==}
-    engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
+  '@astrojs/prism@3.3.0':
+    resolution: {integrity: sha512-q8VwfU/fDZNoDOf+r7jUnMC2//H2l0TuQ6FkGJL8vD8nw/q5KiL3DS1KKBI3QhI9UQhpJ5dc7AtqfbXWuOgLCQ==}
+    engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
 
-  '@astrojs/telemetry@3.2.1':
-    resolution: {integrity: sha512-SSVM820Jqc6wjsn7qYfV9qfeQvePtVc1nSofhyap7l0/iakUKywj3hfy3UJAOV4sGV4Q/u450RD4AaCaFvNPlg==}
-    engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
+  '@astrojs/telemetry@3.3.0':
+    resolution: {integrity: sha512-UFBgfeldP06qu6khs/yY+q1cDAaArM2/7AEIqQ9Cuvf7B1hNLq0xDrZkct+QoIGyjq56y8IaE2I3CTvG99mlhQ==}
+    engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
 
   '@babel/code-frame@7.26.2':
     resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
@@ -732,9 +732,6 @@ packages:
   '@types/estree-jsx@1.0.5':
     resolution: {integrity: sha512-52CcUVNFyfb1A2ALocQw/Dd1BQFNmSdkuC3BkZ6iqhdMfQz7JWOFRuJFloOzjk+6WijU56m9oKXFAXc7o3Towg==}
 
-  '@types/estree@1.0.6':
-    resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
-
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
@@ -814,9 +811,9 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro@5.7.13:
-    resolution: {integrity: sha512-cRGq2llKOhV3XMcYwQpfBIUcssN6HEK5CRbcMxAfd9OcFhvWE7KUy50zLioAZVVl3AqgUTJoNTlmZfD2eG0G1w==}
-    engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
+  astro@5.9.0:
+    resolution: {integrity: sha512-AHF7oZDBQRwggHUG0bwBhRQjrDD+vJpCtPd0/GVxDB1hGRV0SQuFWS0UHX5bYczIqFcao1z9o9o0r2rQtHrTMg==}
+    engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
   axobject-query@4.1.0:
@@ -1642,8 +1639,8 @@ packages:
   preact@10.25.4:
     resolution: {integrity: sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA==}
 
-  prismjs@1.29.0:
-    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+  prismjs@1.30.0:
+    resolution: {integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==}
     engines: {node: '>=6'}
 
   prompts@2.4.2:
@@ -1710,6 +1707,9 @@ packages:
 
   remark-rehype@11.1.1:
     resolution: {integrity: sha512-g/osARvjkBXb6Wo0XvAeXQohVta8i84ACbenPpoSsxTOQH/Ae0/RGP4WZgnMH5pMLpsj4FG7OHmcIcXxpza8eQ==}
+
+  remark-rehype@11.1.2:
+    resolution: {integrity: sha512-Dh7l57ianaEoIpzbp0PC9UKAdCSVklD8E5Rpw7ETfbTl3FqcOOgq5q2LVDhgGCkaBv7p24JXikPdvhhmHvKMsw==}
 
   remark-smartypants@3.0.2:
     resolution: {integrity: sha512-ILTWeOriIluwEvPjv67v7Blgrcx+LZOkAUVtKI3putuhlZm84FnqDORNXPPm+HY3NdZOMhyDwZ1E+eZB/Df5dA==}
@@ -2112,10 +2112,10 @@ snapshots:
 
   '@astrojs/internal-helpers@0.6.1': {}
 
-  '@astrojs/markdown-remark@6.3.1':
+  '@astrojs/markdown-remark@6.3.2':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
-      '@astrojs/prism': 3.2.0
+      '@astrojs/prism': 3.3.0
       github-slugger: 2.0.0
       hast-util-from-html: 2.0.3
       hast-util-to-text: 4.0.2
@@ -2126,7 +2126,7 @@ snapshots:
       rehype-stringify: 10.0.1
       remark-gfm: 4.0.1
       remark-parse: 11.0.0
-      remark-rehype: 11.1.1
+      remark-rehype: 11.1.2
       remark-smartypants: 3.0.2
       shiki: 3.4.2
       smol-toml: 1.3.1
@@ -2138,12 +2138,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.2.6(astro@5.7.13(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0))':
+  '@astrojs/mdx@4.3.0(astro@5.9.0(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:
-      '@astrojs/markdown-remark': 6.3.1
+      '@astrojs/markdown-remark': 6.3.2
       '@mdx-js/mdx': 3.1.0(acorn@8.14.1)
       acorn: 8.14.1
-      astro: 5.7.13(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.9.0(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0)
       es-module-lexer: 1.6.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -2157,7 +2157,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/preact@4.0.11(@babel/core@7.26.8)(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(preact@10.25.4)(yaml@2.7.0)':
+  '@astrojs/preact@4.1.0(@babel/core@7.26.8)(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(preact@10.25.4)(yaml@2.7.0)':
     dependencies:
       '@preact/preset-vite': 2.10.1(@babel/core@7.26.8)(preact@10.25.4)(vite@6.3.5(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(yaml@2.7.0))
       '@preact/signals': 2.0.4(preact@10.25.4)
@@ -2179,11 +2179,11 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/prism@3.2.0':
+  '@astrojs/prism@3.3.0':
     dependencies:
-      prismjs: 1.29.0
+      prismjs: 1.30.0
 
-  '@astrojs/telemetry@3.2.1':
+  '@astrojs/telemetry@3.3.0':
     dependencies:
       ci-info: 4.2.0
       debug: 4.4.0
@@ -2507,7 +2507,7 @@ snapshots:
 
   '@mdx-js/mdx@3.1.0(acorn@8.14.1)':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.4
       '@types/mdx': 2.0.13
@@ -2592,7 +2592,7 @@ snapshots:
 
   '@rollup/pluginutils@5.1.4(rollup@4.40.2)':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-walker: 2.0.2
       picomatch: 4.0.2
     optionalDependencies:
@@ -2775,7 +2775,7 @@ snapshots:
 
   '@types/acorn@4.0.6':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   '@types/debug@4.1.12':
     dependencies:
@@ -2783,9 +2783,7 @@ snapshots:
 
   '@types/estree-jsx@1.0.5':
     dependencies:
-      '@types/estree': 1.0.6
-
-  '@types/estree@1.0.6': {}
+      '@types/estree': 1.0.7
 
   '@types/estree@1.0.7': {}
 
@@ -2850,12 +2848,12 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@5.7.13(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0):
+  astro@5.9.0(@types/node@22.15.18)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.12.0
       '@astrojs/internal-helpers': 0.6.1
-      '@astrojs/markdown-remark': 6.3.1
-      '@astrojs/telemetry': 3.2.1
+      '@astrojs/markdown-remark': 6.3.2
+      '@astrojs/telemetry': 3.3.0
       '@capsizecss/unpack': 2.4.0
       '@oslojs/encoding': 1.1.0
       '@rollup/pluginutils': 5.1.4(rollup@4.40.2)
@@ -2882,6 +2880,7 @@ snapshots:
       github-slugger: 2.0.0
       html-escaper: 3.0.3
       http-cache-semantics: 4.1.1
+      import-meta-resolve: 4.1.0
       js-yaml: 4.1.0
       kleur: 4.1.5
       magic-string: 0.30.17
@@ -3192,7 +3191,7 @@ snapshots:
 
   estree-util-attach-comments@3.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   estree-util-build-jsx@3.0.1:
     dependencies:
@@ -3205,7 +3204,7 @@ snapshots:
 
   estree-util-scope@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
 
   estree-util-to-js@2.0.0:
@@ -3223,7 +3222,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   eventemitter3@5.0.1: {}
 
@@ -3325,7 +3324,7 @@ snapshots:
 
   hast-util-to-estree@3.1.1:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.4
       comma-separated-tokens: 2.0.3
@@ -3360,7 +3359,7 @@ snapshots:
 
   hast-util-to-jsx-runtime@2.3.2:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/hast': 3.0.4
       '@types/unist': 3.0.3
       comma-separated-tokens: 2.0.3
@@ -3790,7 +3789,7 @@ snapshots:
 
   micromark-extension-mdx-expression@3.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       micromark-factory-mdx-expression: 2.0.2
       micromark-factory-space: 2.0.1
@@ -3802,7 +3801,7 @@ snapshots:
   micromark-extension-mdx-jsx@3.0.1:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       estree-util-is-identifier-name: 3.0.0
       micromark-factory-mdx-expression: 2.0.2
@@ -3819,7 +3818,7 @@ snapshots:
 
   micromark-extension-mdxjs-esm@3.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.2
       micromark-util-character: 2.1.1
@@ -3855,7 +3854,7 @@ snapshots:
 
   micromark-factory-mdx-expression@2.0.2:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       devlop: 1.1.0
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
@@ -3920,7 +3919,7 @@ snapshots:
   micromark-util-events-to-acorn@2.0.2:
     dependencies:
       '@types/acorn': 4.0.6
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/unist': 3.0.3
       devlop: 1.1.0
       estree-util-visit: 2.0.0
@@ -4095,7 +4094,7 @@ snapshots:
 
   preact@10.25.4: {}
 
-  prismjs@1.29.0: {}
+  prismjs@1.30.0: {}
 
   prompts@2.4.2:
     dependencies:
@@ -4112,7 +4111,7 @@ snapshots:
 
   recma-build-jsx@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-util-build-jsx: 3.0.1
       vfile: 6.0.3
 
@@ -4128,14 +4127,14 @@ snapshots:
 
   recma-parse@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       esast-util-from-js: 2.0.1
       unified: 11.0.5
       vfile: 6.0.3
 
   recma-stringify@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       estree-util-to-js: 2.0.0
       unified: 11.0.5
       vfile: 6.0.3
@@ -4164,7 +4163,7 @@ snapshots:
 
   rehype-recma@1.0.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/hast': 3.0.4
       hast-util-to-estree: 3.1.1
     transitivePeerDependencies:
@@ -4211,6 +4210,14 @@ snapshots:
       - supports-color
 
   remark-rehype@11.1.1:
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/mdast': 4.0.4
+      mdast-util-to-hast: 13.2.0
+      unified: 11.0.5
+      vfile: 6.0.3
+
+  remark-rehype@11.1.2:
     dependencies:
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
