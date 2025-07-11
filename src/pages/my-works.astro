@@ -1,23 +1,16 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import type { Portfolio } from "../types/works";
 
 import Works from "../components/Works.astro";
 import Layout from "../layouts/Layout.astro";
 
-const works = await getCollection("works");
-
-const filterByCategory = (category: string) =>
-  works
-    .filter((item) => item.data.category === category)
-    .sort((a, b) => a.id.localeCompare(b.id))
-    .map((item) => item.data);
-
-const webProjects = filterByCategory("web-projects");
-const websites = filterByCategory("websites");
-const miniProjects = filterByCategory("mini-projects");
-const gitProjects = filterByCategory("api");
-const otherProjects = filterByCategory("others");
+const works = (await fetch(
+  new URL("/api/portfolio/projects", import.meta.env.PORTFOLIO_ADMIN_API_URL)
+)
+  .then((res) => res.json())
+  .then((data) => data)
+  .catch(() => [])) as Portfolio[];
 ---
 
 <Layout title="My Works | Joshue Abance">
@@ -46,35 +39,15 @@ const otherProjects = filterByCategory("others");
 
     <div class="space-y-20 mt-12">
       <div class="space-y-12">
-        <div class="">
-          <h4 class="text-white text-left font-bold mb-4">Web Projects</h4>
+        {
+          works.map((item) => (
+            <div>
+              <h4 class="text-white text-left font-bold mb-4">{item.name}</h4>
 
-          <Works works={webProjects} />
-        </div>
-
-        <div class="">
-          <h4 class="text-white text-left font-bold mb-4">Projects</h4>
-
-          <Works works={gitProjects} />
-        </div>
-
-        <div class="">
-          <h4 class="text-white text-left font-bold mb-4">Mini Web Projects</h4>
-
-          <Works works={miniProjects} />
-        </div>
-
-        <div class="">
-          <h4 class="text-white text-left font-bold mb-4">Others</h4>
-
-          <Works works={otherProjects} />
-        </div>
-
-        <div class="">
-          <h4 class="text-white text-left font-bold mb-4">Works</h4>
-
-          <Works works={websites} />
-        </div>
+              <Works works={item.projects} slug={item.slug} />
+            </div>
+          ))
+        }
       </div>
 
       <div class="text-center space-y-4">

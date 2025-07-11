@@ -1,64 +1,101 @@
 ---
+import { ExternalLinkIcon, FolderGitIcon } from "@lucide/astro";
 import { Image } from "astro:assets";
-import type { InferEntrySchema } from "astro:content";
+import type { Project } from "../types/works";
 
 interface Props {
-  works: InferEntrySchema<"works">[];
+  works: Project[];
+  slug: string;
 }
 
-const { works } = Astro.props;
+const props = Astro.props;
 ---
 
 <ul
   class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6 xl:gap-8 items-stretch"
 >
   {
-    works.map((i) => (
-      <li>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          title="Visit project"
-          href={i.website}
-          class="flex items-center justify-between text-left bg-black/20 border border-black/10 hover:bg-black/40 duration-300 py-2 px-4 rounded-xl"
-        >
-          {i.logo ? (
-            <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
+    props.works.map((i) => (
+      <li class="space-y-6 bg-black/30 border border-black/10 hover:bg-black/40 duration-300 py-6 px-4 rounded-xl h-full flex flex-col justify-between">
+        <div class="flex flex-col items-center lg:flex-row lg:items-start justify-between text-left">
+          {i.logo && i.logo.length > 0 ? (
+            <div class="flex items-start justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
               <Image
                 format="png"
                 height={100}
                 width={100}
-                alt={i.name}
+                alt={i.title}
                 class="rounded-xl"
                 src={i.logo}
               />
             </div>
-          ) : i.category === "api" ? (
-            <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
+          ) : props.slug === "api" ? (
+            <div class="flex items-start justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
               <img
                 height={60}
                 width={60}
-                alt={i.name}
+                alt={i.title}
                 class="rounded-xl"
                 src="/assets/api.png"
               />
             </div>
           ) : (
-            <div class="flex items-center justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
+            <div class="flex items-start justify-center h-[80px] lg:h-[100px] w-[80px] lg:w-[100px]">
               <img
                 height={40}
                 width={40}
-                alt={i.name}
+                alt={i.title}
                 src="https://cdn.simpleicons.org/github/white"
               />
             </div>
           )}
 
           <div class="ml-6 w-full">
-            <strong class="text-lg tracking-wide">{i.name}</strong>
-            <p class="line-clamp-3 lg:line-clamp-2">{i.description}</p>
+            <strong class="text-lg tracking-wide">{i.title}</strong>
+            <p class="line-clamp-3 lg:line-clamp-2 text-neutral-400">
+              {i.description}
+            </p>
+            <div class="mt-3 flex items-center gap-1 flex-wrap">
+              {i.tech_stack.map((t) => (
+                <>
+                  <span class="text-xs border rounded-lg bg-neutral-900 border-neutral-700 text-neutral-300 py-1 px-2">
+                    {t}
+                  </span>
+                </>
+              ))}
+            </div>
           </div>
-        </a>
+        </div>
+
+        <div class="flex items-center justify-center space-x-4">
+          {i.git_repo_url && i.git_repo_url.length > 0 ? (
+            <a
+              target="_blank"
+              rel="noreferrer"
+              title="View git repo"
+              href={i.git_repo_url}
+              class="text-sm text-neutral-300 inline-flex items-center space-x-1"
+            >
+              <FolderGitIcon class="size-4" />
+
+              <span>View Git Repo</span>
+            </a>
+          ) : null}
+
+          {i.project_website && i.project_website.length > 0 ? (
+            <a
+              target="_blank"
+              rel="noreferrer"
+              title="Visit project website"
+              href={i.project_website}
+              class="text-sm text-neutral-300 border border-neutral-800 py-1 px-2 rounded-lg inline-flex items-center space-x-1"
+            >
+              <ExternalLinkIcon class="size-4" />
+
+              <span>Visit Website</span>
+            </a>
+          ) : null}
+        </div>
       </li>
     ))
   }
