@@ -10,14 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^4.3.3",
     "@astrojs/preact": "^4.1.0",
     "@fontsource/rubik": "^5.2.6",
     "@lucide/astro": "^0.525.0",
     "@nanostores/preact": "^0.5.0",
     "@tailwindcss/postcss": "^4.0.6",
     "@tailwindcss/vite": "^4.0.6",
-    "astro": "^5.11.0",
+    "astro": "^5.12.9",
     "nanostores": "^0.9.3",
     "preact": "^10.17.1",
     "tailwindcss": "^4.0.6"
