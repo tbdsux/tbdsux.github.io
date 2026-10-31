@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import type { Portfolio } from "../types/works";
 
 import Works from "../components/Works.astro";
@@ -9,69 +8,41 @@ const works = (await fetch(
   new URL("/api/portfolio/projects", import.meta.env.PORTFOLIO_ADMIN_API_URL)
 )
   .then((res) => res.json())
-  .then((data) => data)
   .catch(() => [])) as Portfolio[];
 ---
 
 <Layout title="My Works | Joshue Abance">
-  <div class="text-center text-white">
-    <div class="text-left mb-4">
-      <small>
-        <a href="/" class="hover:underline"> Return Home</a>
-      </small>
-    </div>
+  <h1 class="text-2xl font-semibold text-neutral-100">Works</h1>
+  <p class="mt-2 text-sm text-neutral-500">
+    Some of the projects I've built. More on
+    <a
+      href="https://github.com/tbdsux?tab=repositories"
+      target="_blank"
+      rel="noreferrer"
+      class="text-neutral-300 underline decoration-neutral-700 underline-offset-4 hover:decoration-neutral-300"
+    >
+      GitHub</a
+    > and
+    <a
+      href="https://git.tbdh.app/"
+      target="_blank"
+      rel="noreferrer"
+      class="text-neutral-300 underline decoration-neutral-700 underline-offset-4 hover:decoration-neutral-300"
+    >
+      git.tbdh.app</a
+    >.
+  </p>
 
-    <div>
-      <h3 class="text-3xl font-black">My Works</h3>
-      <p>Discover some of the projects that I have made and created</p>
-      <p>
-        See more on my
-        <a
-          href="https://github.com/tbdsux?tab=repositories"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="font-semibold hover:underline"
-        >
-          Github
-        </a> page.
-      </p>
-    </div>
-
-    <div class="space-y-20 mt-12">
-      <div class="space-y-12">
-        {
-          works.map((item) => (
-            <div>
-              <h4 class="text-white text-left font-bold mb-4">{item.name}</h4>
-
-              <Works works={item.projects} slug={item.slug} />
-            </div>
-          ))
-        }
-      </div>
-
-      <div class="text-center space-y-4">
-        <p>
-          Checkout my <strong><code>Github</code></strong> profile for more of my
-          projects and works
-        </p>
-        <a
-          title="Github"
-          href="https://github.com/tbdsux?tab=repositories"
-          target="_blank"
-          rel="noreferrer"
-          class="text-sm bg-black/20 hover:bg-black/40 duration-300 inline-flex items-center py-2 px-6 border border-white/10 rounded-xl"
-        >
-          <Image
-            alt="Github"
-            width={28}
-            height={28}
-            src="https://cdn.simpleicons.org/github/white"
-          />
-
-          <span class="ml-2">@tbdsux</span>
-        </a>
-      </div>
-    </div>
+  <div class="mt-12 space-y-12">
+    {
+      works.map((item) => (
+        <section>
+          <h2 class="text-xs uppercase tracking-widest text-neutral-500">
+            {item.name}
+          </h2>
+          <Works works={item.projects} />
+        </section>
+      ))
+    }
   </div>
 </Layout>

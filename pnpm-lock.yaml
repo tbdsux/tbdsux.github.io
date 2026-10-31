@@ -14,12 +14,9 @@ importers:
       '@astrojs/preact':
         specifier: ^6.1.1
         version: 6.1.1(@babel/core@7.29.7)(@types/node@24.3.1)(jiti@2.7.0)(preact@11.1.1)(yaml@2.9.1)
-      '@fontsource/rubik':
+      '@fontsource-variable/geist-mono':
         specifier: ^5.3.0
         version: 5.3.0
-      '@lucide/astro':
-        specifier: ^1.66.0
-        version: 1.66.0(astro@7.4.4(@types/node@24.3.1)(jiti@2.7.0)(yaml@2.9.1))
       '@nanostores/preact':
         specifier: ^1.1.1
         version: 1.1.1(nanostores@1.5.5)(preact@11.1.1)
@@ -321,8 +318,8 @@ packages:
   '@emnapi/wasi-threads@1.2.3':
     resolution: {integrity: sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g==}
 
-  '@fontsource/rubik@5.3.0':
-    resolution: {integrity: sha512-Nks2mn7vlE1jZVHuVgoKU2Ejqjvd+GJzLRdraCjo1xc79oo7O6vJ8pcvSfmKPGX3/Ln7nt09XWFzPeu2jWf0xQ==}
+  '@fontsource-variable/geist-mono@5.3.0':
+    resolution: {integrity: sha512-vBbuwDEo9AkrqADMXOrlAR3DFcJi4/JxeuU43FoiQERnNwsfXNnvxvReZG02cQKmyk4DZkZdBZX3oTDvy2zBAw==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -485,11 +482,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
-
-  '@lucide/astro@1.66.0':
-    resolution: {integrity: sha512-e6HoP1W2PQm8HSQfWyo0jz4fl8rAgzbNk/to0dlMy0jpwwwmsZ8NxeX3KU8TcpISa0BL02pV9WdbjzGIsMT6LQ==}
-    peerDependencies:
-      astro: ^4 || ^5 || ^6 || ^7
 
   '@nanostores/preact@1.1.1':
     resolution: {integrity: sha512-196xgAe1/HRDfibKFw+V2hHhARthlwNquy1oXyS0jNLgX3AYdo8MAn8nTEx+lojYGpvIz7cgoFbgbpnwcwCLSA==}
@@ -2193,7 +2185,7 @@ snapshots:
       tslib: 2.9.1
     optional: true
 
-  '@fontsource/rubik@5.3.0': {}
+  '@fontsource-variable/geist-mono@5.3.0': {}
 
   '@img/colour@1.1.0':
     optional: true
@@ -2320,10 +2312,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
-
-  '@lucide/astro@1.66.0(astro@7.4.4(@types/node@24.3.1)(jiti@2.7.0)(yaml@2.9.1))':
-    dependencies:
-      astro: 7.4.4(@types/node@24.3.1)(jiti@2.7.0)(yaml@2.9.1)
 
   '@nanostores/preact@1.1.1(nanostores@1.5.5)(preact@11.1.1)':
     dependencies:

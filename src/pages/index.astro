@@ -1,198 +1,75 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
-const discord = "joshue?#9999";
+const links = [
+  { label: "github", handle: "@tbdsux", href: "https://github.com/tbdsux/" },
+  { label: "git", handle: "git.tbdh.app", href: "https://git.tbdh.app/" },
+  { label: "x", handle: "@_jlazz_", href: "https://twitter.com/_jlazz_" },
+  {
+    label: "discord",
+    handle: "joshue?#9999",
+    href: "https://discordapp.com/users/475085200414605334",
+  },
+];
 ---
 
-<script>
-  const btnCopy = document.getElementById("copy-discord");
-  if (btnCopy) {
-    btnCopy.addEventListener("click", () => {
-      navigator.clipboard.writeText("joshue?#9999");
-
-      btnCopy.title = "Copied";
-      setTimeout(() => {
-        btnCopy.title = "Copy Discord Username";
-      }, 3000);
-    });
-  }
-</script>
-
 <Layout title="Joshue Abance - Personal Website">
-  <div class="text-white">
-    <h1 class="text-5xl mt-8 leading-normal">
-      Hello, I am <br class="md:hidden" />
-      <span class="underline font-black">Joshue Abance (tbdsux)</span>
-    </h1>
-    <div class="mt-6 text-xl">
+  <section>
+    <div class="flex items-center gap-5">
+      <img
+        src="https://avatars.githubusercontent.com/u/37932956?v=4&s=128"
+        alt="Joshue Abance's GitHub avatar"
+        width="64"
+        height="64"
+        class="size-16 rounded-full border border-neutral-800"
+      />
+      <div>
+        <h1 class="text-2xl font-semibold text-neutral-100">Joshue Abance</h1>
+        <p class="mt-1 text-sm text-neutral-500">@tbdsux · developer</p>
+      </div>
+    </div>
+
+    <div class="mt-8 space-y-4 leading-relaxed">
       <p>
-        I love creating real-world projects / applications (mainly web apps)
-        using popular frameworks available.
+        I love creating real-world projects and applications, mainly web apps,
+        using the popular frameworks available.
       </p>
       <p>
-        Loves using and experimenting with multiple programming languages and
-        multiple frameworks.
+        I enjoy experimenting with multiple programming languages and
+        frameworks. Happy coding!
       </p>
-      <p>Happy coding!</p>
     </div>
+  </section>
 
-    <div class="flex flex-wrap items-center justify-center mt-8">
-      <div class="m-2">
-        <a
-          title="Discord"
-          href="https://discordapp.com/users/475085200414605334"
-          target="_blank"
-          rel="noreferrer"
-          class="text-sm bg-black/20 hover:bg-black/40 duration-300 inline-flex items-center py-2 px-6 border border-white/10 rounded-xl"
-        >
-          <Image
-            alt="Discord"
-            width={28}
-            height={28}
-            src="https://cdn.simpleicons.org/discord/white"
-          />
+  <section class="mt-14">
+    <h2 class="mb-4 text-xs uppercase tracking-widest text-neutral-500">
+      Elsewhere
+    </h2>
+    <ul class="space-y-2 text-sm">
+      {
+        links.map((l) => (
+          <li class="flex gap-4">
+            <span class="w-20 shrink-0 text-neutral-500">{l.label}</span>
+            <a
+              href={l.href}
+              target="_blank"
+              rel="noreferrer"
+              class="text-neutral-200 underline decoration-neutral-700 underline-offset-4 hover:decoration-neutral-300"
+            >
+              {l.handle}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
-          <span class="ml-2">{discord}</span>
-        </a>
-      </div>
-
-      <div class="m-2">
-        <a
-          title="Github"
-          href="https://github.com/tbdsux/"
-          target="_blank"
-          rel="noreferrer"
-          class="text-sm bg-black/20 hover:bg-black/40 duration-300 inline-flex items-center py-2 px-6 border border-white/10 rounded-xl"
-        >
-          <Image
-            alt="Github"
-            width={28}
-            height={28}
-            src="https://cdn.simpleicons.org/github/white"
-          />
-
-          <span class="ml-2">@tbdsux</span>
-        </a>
-      </div>
-
-      <div class="m-2">
-        <a
-          title="Gitea"
-          href="https://gitea.com/tbdsux/"
-          target="_blank"
-          rel="noreferrer"
-          class="text-sm bg-black/20 hover:bg-black/40 duration-300 inline-flex items-center py-2 px-6 border border-white/10 rounded-xl"
-        >
-          <Image
-            alt="GitLab"
-            width={28}
-            height={28}
-            src="https://cdn.simpleicons.org/gitea/white"
-          />
-
-          <span class="ml-2">@tbdsux</span>
-        </a>
-      </div>
-
-      <div class="m-2">
-        <a
-          title="GitLab"
-          href="https://gitlab.com/tbdsux/"
-          target="_blank"
-          rel="noreferrer"
-          class="text-sm bg-black/20 hover:bg-black/40 duration-300 inline-flex items-center py-2 px-6 border border-white/10 rounded-xl"
-        >
-          <Image
-            alt="GitLab"
-            width={28}
-            height={28}
-            src="https://cdn.simpleicons.org/gitlab/white"
-          />
-
-          <span class="ml-2">@tbdsux</span>
-        </a>
-      </div>
-
-      <div class="m-2">
-        <a
-          title="Twitter"
-          href="https://twitter.com/_jlazz_"
-          target="_blank"
-          rel="noreferrer"
-          class="text-sm bg-black/20 hover:bg-black/40 duration-300 inline-flex items-center py-2 px-6 border border-white/10 rounded-xl"
-        >
-          <Image
-            alt="Twitter"
-            width={28}
-            height={28}
-            src="https://cdn.simpleicons.org/x/white"
-          />
-
-          <span class="ml-2">@_jlazz_</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="m-2"></div>
-
-    <hr class="my-10 border-white/10" />
-
-    <div class="flex items-center justify-center flex-wrap">
-      <a
-        title="My Works"
-        href="/my-works"
-        class="bg-black/20 hover:bg-black/40 py-2 px-8 rounded-xl border border-white/5 m-1 inline-flex items-center"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-          ></path>
-        </svg>
-
-        <span class="ml-2 text-lg font-semibold tracking-wide">My Works</span>
-      </a>
-
-      <a
-        title="My Blogs"
-        href="/blogs"
-        class="bg-black/20 hover:bg-black/40 py-2 px-8 rounded-xl border border-white/5 m-1 inline-flex items-center"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
-          ></path>
-        </svg>
-
-        <span class="ml-2 text-lg font-semibold tracking-wide">Blogs</span>
-      </a>
-    </div>
-
-    <div class="flex items-center justify-center gap-12 mt-24">
-      <a class="hover:underline text-gray-400 text-sm" href="/privacy-policy"
-        >Privacy Policy</a
-      >
-      <a class="hover:underline text-gray-400 text-sm" href="/terms-of-service"
-        >Terms of Service</a
-      >
-    </div>
-  </div>
+  <section class="mt-14">
+    <a
+      href="/my-works"
+      class="text-sm text-neutral-200 underline decoration-neutral-700 underline-offset-4 hover:decoration-neutral-300"
+    >
+      See what I've built →
+    </a>
+  </section>
 </Layout>

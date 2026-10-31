@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import Layout from "./Layout.astro";
 
 type Props = {
@@ -9,57 +8,12 @@ type Props = {
 const props = Astro.props;
 ---
 
-<Layout title={`${props.title} - Blog | Joshue Abance`}>
-  <div class="text-center text-white">
-    <div class="text-left mb-4">
-      <small>
-        <a href="/" class="hover:underline"> Return to Home</a>
-      </small>
-    </div>
+<Layout title={`${props.title} | Joshue Abance`}>
+  <article>
+    <h1 class="text-2xl font-semibold text-neutral-100">{props.title}</h1>
 
-    <h3 class="text-3xl font-black">{props.title}</h3>
-
-    <hr class="my-12 border-gray-700" />
-
-    <div class="text-left prose prose-invert max-w-7xl lg:w-11/12 mx-auto">
+    <div class="prose prose-invert prose-neutral mt-12 max-w-none prose-headings:font-semibold prose-h1:text-xl prose-h2:text-lg prose-h3:text-base prose-a:decoration-neutral-600 prose-a:underline-offset-4 prose-code:before:content-none prose-code:after:content-none">
       <slot />
     </div>
-  </div>
+  </article>
 </Layout>
-
-<script>
-  let codeBlocks = Array.from(document.querySelectorAll("pre"));
-
-  for (const cb of codeBlocks) {
-    let copyButton = document.createElement("button");
-    copyButton.className =
-      "text-xs hidden group-hover:block absolute top-0 right-0 py-0.5 px-4 rounded bg-gray-600 hover:bg-gray-700 text-white duration-300";
-    copyButton.innerHTML = "Copy";
-
-    let wrapper = document.createElement("div");
-    wrapper.className = "relative group";
-
-    cb.setAttribute("tabindex", "0");
-    cb.appendChild(copyButton);
-
-    cb.parentNode?.insertBefore(wrapper, cb);
-    wrapper.appendChild(cb);
-
-    copyButton.addEventListener("click", async () => {
-      await copyCode(cb, copyButton);
-    });
-  }
-
-  async function copyCode(block: HTMLPreElement, button: HTMLButtonElement) {
-    const code = block.querySelector("code");
-    const textCode = code?.innerText ?? "";
-
-    await navigator.clipboard.writeText(textCode);
-
-    button.innerText = "Copied";
-
-    setTimeout(() => {
-      button.innerText = "Copy";
-    }, 2000);
-  }
-</script>

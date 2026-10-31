@@ -1,9 +1,5 @@
 ---
-import "@fontsource/rubik/300.css";
-import "@fontsource/rubik/400.css";
-import "@fontsource/rubik/600.css";
-import "@fontsource/rubik/700.css";
-import "@fontsource/rubik/900.css";
+import "@fontsource-variable/geist-mono";
 
 import "../styles/tailwind.css";
 
@@ -12,6 +8,11 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const nav = [
+  { href: "/my-works", label: "works" },
+];
+const path = Astro.url.pathname;
 ---
 
 <html lang="en">
@@ -31,11 +32,46 @@ const { title } = Astro.props;
       src="https://analytics.tbdh.dev/script.js"
       data-website-id="fb34ea28-df1c-4eb5-9dc1-56fc334bab6e"></script>
   </head>
-  <body class="w-full">
-    <main
-      class="min-h-screen py-24 w-5/6 xl:w-4/5 mx-auto flex items-center justify-center"
+  <body class="text-neutral-300 antialiased">
+    <div
+      class="mx-auto flex min-h-screen max-w-3xl flex-col px-4 py-12 sm:px-6 sm:py-20"
     >
-      <slot />
-    </main>
+      <header class="mb-16 flex items-center justify-between text-sm">
+        <a href="/" class="font-medium text-neutral-100 hover:text-white">
+          ~/tbdsux
+        </a>
+        <nav class="flex gap-5">
+          {
+            nav.map((n) => (
+              <a
+                href={n.href}
+                class:list={[
+                  "hover:text-neutral-100",
+                  path.startsWith(n.href)
+                    ? "text-neutral-100 underline underline-offset-4"
+                    : "text-neutral-500",
+                ]}
+              >
+                {n.label}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
+
+      <main class="flex-1">
+        <slot />
+      </main>
+
+      <footer
+        class="mt-24 flex flex-wrap justify-between gap-4 border-t border-neutral-800 pt-6 text-xs text-neutral-500"
+      >
+        <span>© {new Date().getFullYear()} Joshue Abance</span>
+        <div class="flex gap-4">
+          <a href="/privacy-policy" class="hover:text-neutral-300">privacy</a>
+          <a href="/terms-of-service" class="hover:text-neutral-300">terms</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

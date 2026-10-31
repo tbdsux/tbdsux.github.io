@@ -1,17 +1,16 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-body {
-  background: linear-gradient(135deg, #000000, #1a1a1a, #2d2d2d);
-  background: -moz-linear-gradient(135deg, #000000, #1a1a1a, #2d2d2d);
-  background: -webkit-linear-gradient(135deg, #000000, #1a1a1a, #2d2d2d);
-  background-image: radial-gradient(#2d2d2d 1px, transparent 1px),
-    radial-gradient(#2d2d2d 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: 0 0, 25px 25px;
-  background-color: #111211;
+@theme {
+  --font-sans: "Geist Mono Variable", ui-monospace, monospace;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
 }
 
-@theme {
-  --font-sans: "Rubik", "sans-serif";
+body {
+  background-color: #0a0a0a;
+}
+
+::selection {
+  background: #e5e5e5;
+  color: #0a0a0a;
 }
