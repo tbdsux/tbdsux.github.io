@@ -1,14 +1,18 @@
 import { defineConfig } from "astro/config";
 
-import mdx from "@astrojs/mdx";
-import preact from "@astrojs/preact";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), mdx()],
   vite: {
     plugins: [tailwindcss()],
+  },
+  // old blog URLs, the blog was removed
+  redirects: {
+    "/blogs": "/",
+    "/blogs/erb-tailwind": "/",
+    "/blogs/first-post": "/",
+    "/blogs/setting-up-git": "/",
   },
   site: "https://www.tbdh.dev",
   compressHTML: true,
