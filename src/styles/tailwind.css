@@ -1,16 +1,37 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --font-sans: "Geist Mono Variable", ui-monospace, monospace;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
 }
 
+/* light theme mirrors the neutral scale, so every neutral-* class flips without dark: variants */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-neutral-50: oklch(14.5% 0 none);
+  --color-neutral-100: oklch(20.5% 0 none);
+  --color-neutral-200: oklch(26.9% 0 none);
+  --color-neutral-300: oklch(37.1% 0 none);
+  --color-neutral-400: oklch(43.9% 0 none);
+  --color-neutral-600: oklch(70.8% 0 none);
+  --color-neutral-700: oklch(87% 0 none);
+  --color-neutral-800: oklch(92.2% 0 none);
+  --color-neutral-900: oklch(97% 0 none);
+  --color-neutral-950: oklch(98.5% 0 none);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 body {
-  background-color: #0a0a0a;
+  background-color: var(--color-neutral-950);
 }
 
 ::selection {
-  background: #e5e5e5;
-  color: #0a0a0a;
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-950);
 }

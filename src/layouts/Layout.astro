@@ -13,10 +13,40 @@ const nav = [
   { href: "/my-works", label: "works" },
 ];
 const path = Astro.url.pathname;
+const themes = ["dark", "light", "system"];
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
+    <script is:inline>
+      // inline in <head> so the theme is applied before first paint
+      (() => {
+        let pref = "system";
+        try {
+          pref = localStorage.getItem("theme") || "system";
+        } catch {}
+        const mq = matchMedia("(prefers-color-scheme: dark)");
+        const apply = () => {
+          document.documentElement.dataset.theme =
+            pref === "system" ? (mq.matches ? "dark" : "light") : pref;
+          document.querySelectorAll("[data-theme-btn]").forEach((b) => {
+            b.setAttribute("aria-pressed", String(b.dataset.themeBtn === pref));
+          });
+        };
+        apply();
+        mq.addEventListener("change", () => pref === "system" && apply());
+        document.addEventListener("DOMContentLoaded", apply);
+        document.addEventListener("click", (e) => {
+          const btn = e.target.closest("[data-theme-btn]");
+          if (!btn) return;
+          pref = btn.dataset.themeBtn;
+          try {
+            localStorage.setItem("theme", pref);
+          } catch {}
+          apply();
+        });
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link
@@ -37,7 +67,7 @@ const path = Astro.url.pathname;
       class="mx-auto flex min-h-screen max-w-3xl flex-col px-4 py-12 sm:px-6 sm:py-20"
     >
       <header class="mb-16 flex items-center justify-between text-sm">
-        <a href="/" class="font-medium text-neutral-100 hover:text-white">
+        <a href="/" class="font-medium text-neutral-100 hover:text-neutral-50">
           ~/tbdsux
         </a>
         <nav class="flex gap-5">
@@ -67,6 +97,23 @@ const path = Astro.url.pathname;
         class="mt-24 flex flex-wrap justify-between gap-4 border-t border-neutral-800 pt-6 text-xs text-neutral-500"
       >
         <span>© {new Date().getFullYear()} Joshue Abance</span>
+        <div class="flex items-center gap-2" role="group" aria-label="Theme">
+          {
+            themes.map((t, i) => (
+              <>
+                {i > 0 && <span class="text-neutral-700">|</span>}
+                <button
+                  type="button"
+                  data-theme-btn={t}
+                  aria-pressed="false"
+                  class="cursor-pointer hover:text-neutral-300 aria-pressed:text-neutral-100 aria-pressed:underline aria-pressed:underline-offset-4"
+                >
+                  {t}
+                </button>
+              </>
+            ))
+          }
+        </div>
         <div class="flex gap-4">
           <a href="/privacy-policy" class="hover:text-neutral-300">privacy</a>
           <a href="/terms-of-service" class="hover:text-neutral-300">terms</a>
